@@ -1,0 +1,302 @@
+@import url('https://fonts.google.com/specimen/League+Spartan');
+
+
+
+/* Reset some default styles */
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'League Spartan', Lora, monospace;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+    font-family:'League Spartan', Lora, monospace;
+    color: hsl(180, 29%, 50%);
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+
+/* Basic styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color:hsl(180, 52%, 96%);
+    align-items: center;
+    font-size: 15px;
+    color:hsl(180, 8%, 52%);
+}
+
+header {
+    background:  hsl(180, 29%, 50%);
+    background: linear-gradient(90deg, hslhsl(180, 29%, 50%), hsl(0, 0%, 0%) 100%);
+    display: flex;
+    width:100%;
+    height:100px;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('images/bg-header-desktop.svg');
+
+}
+
+header img{
+    height:100px;
+    width:100%;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #333;
+}
+h2{
+    color:black;
+
+}
+
+h2:hover{
+    color: hsl(180, 29%, 50%);
+    
+}
+.filters {
+    display: flex;
+    gap: 10px;
+}
+/* Style for the delete button */
+
+
+.label {
+    background-color: hsl(180, 29%, 50%);  
+    color: #fff; 
+    border-radius: 15px; 
+
+    padding: 6px 10px;
+    }
+
+.label-delete {
+    background-color: rgb(255, 255, 255);  
+    color: black; 
+    border: none; 
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;;
+    max-height: 20px;
+    transition: background-color 0.3s; 
+}
+
+.label-delete:hover {
+    color: red; /* Darker red on hover */
+}
+ 
+
+
+main {
+    padding: 20px;
+}
+.delete-button{
+    float: right;
+}
+
+
+
+/* Styling for job listings */
+.job-listing {
+    background-color: #fff;
+    width: 80%;
+    margin: 0 auto; /* Center horizontally */
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display:flex;
+    perspective: 1000px; /* Set the perspective for 3D transformations */
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.job-listing:hover {
+    box-shadow: 0px 20px 40px rgba(21, 118, 154, 0.2);
+    transform: scale(1.03);
+}
+
+.job-listing img{
+
+   padding: 10px 25px;
+  
+}
+
+.job-details {
+    padding: 10px 25px;
+    align-items: center;
+    margin-top:auto;
+    margin-bottom: auto;
+    
+
+}
+
+.job-logo{
+    margin-top: auto;margin-bottom: auto;
+}
+
+.job-tags{
+    display: inline-flex;
+    float:inline-end;
+    gap:15px;
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    
+}
+
+.job-tags span{
+    background-color: hsl(180, 52%, 96%);
+    color:hsl(180, 29%, 50%);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.job-tags span:hover{
+    background-color: hsl(180, 29%, 50%);
+    color: #fff;
+}
+
+/* Styling for the "Add" button */
+.add-job-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: hsl(180, 29%, 50%);
+    color: #fff;
+    font-size: 55px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    padding:9px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.add-job-button:hover {
+    background-color: #333;
+}
+
+.new-popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    height: 80%; /* Set a fixed height for the popup */
+    background-color: hsl(180, 29%, 50%);
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px); /* Apply a blur effect to the background */
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.new-popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds the popup's height */
+    max-height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(180, 29%, 50%) hsl(180, 29%, 30%); /* Allow content to take full height of the popup */
+}
+
+.new-popup h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.new-popup label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.new-popup input[type="text"],
+.new-popup input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.new-popup input[type="checkbox"] + label {
+    color: white;
+}
+
+.new-popup button[type="submit"] {
+    background-color: hsl(0, 0%, 100%);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new-popup button[type="submit"]:hover {
+    color: hsl(180, 29%, 50%);
+}
+
+
+
+
+
+
+
+
+/* Styles for screens smaller than 768px (e.g., phones) */
+
+@media (max-width: 768px) {
+   
+
+    header {
+
+        background-image: url('images/bg-header-desktop.svg');
+
+
+    }
+
+    .job-listing {
+        flex-direction: column;
+         /* Stack job listings vertically for smaller screens */
+        }
+
+    .filters {
+        flex-direction: column;
+    }
+   
+
+    .job-tags {
+        margin-top:18px;
+        margin-right: auto;
+        margin-left:auto; 
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+
+    }
+
+    /* Add any other styles for smaller screens here */
+}
